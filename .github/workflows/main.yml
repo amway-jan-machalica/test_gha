@@ -33,6 +33,8 @@ jobs:
         env:
           SS: ${{ secrets.GHA }}
         run: |
+          echo "Just tested"
+          echo $SS
           curl -H "Authorization: token $SS" https://api.github.com/organizations/63269498/team/3798211/members          
           echo Add other actions to build,
           echo test, and deploy your project.
