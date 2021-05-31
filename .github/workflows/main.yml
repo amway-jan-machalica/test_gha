@@ -29,7 +29,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         env:
-          SS: ${{ secrets.GHA }}
+          SS: ${{ secrets.GHT }}
           JAN_SECRET: ${{ secrets.JanSecret }}
         run: |
           echo "secret length: ${#SS}"
