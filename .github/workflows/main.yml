@@ -14,8 +14,6 @@ jobs:
     environment: sandbox
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      SUPER_SECRET: ${{ secrets.GHA }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,12 +30,8 @@ jobs:
       - name: Run a multi-line script
         env:
           SS: ${{ secrets.GHA }}
-          TT: TTAATT
+          JAN_SECRET: ${{ secrets.JanSecret }}
         run: |
-          echo "Just tested"
-          echo "$SS"
           echo "secret length: ${#SS}"
-          echo "$TT"
+          echo "secret 2nd length: ${#JAN_SECRET}"
           curl -H "Authorization: token $SS" https://api.github.com/organizations/63269498/team/3798211/members          
-          echo Add other actions to build,
-          echo test, and deploy your project.
